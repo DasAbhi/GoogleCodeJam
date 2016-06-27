@@ -47,7 +47,6 @@ int IntegerIterator(int Number){
 
 
 int main(){
-  string s = to_string(24);
 
   ifstream fin("input.txt");
   ofstream fout("output.txt");
