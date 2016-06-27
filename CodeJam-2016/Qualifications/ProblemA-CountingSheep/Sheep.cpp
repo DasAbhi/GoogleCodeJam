@@ -13,17 +13,22 @@ int IntegerIterator(int Number){
   }
 
   int DigitCounter = 0;
-  int iterator;
+  int iterator = 0;
   bool DigitBool = true;
 
-  string ConvertedSringNumber = to_string(Number);
+  //string ConvertedSringNumber = to_string(Number);
 
   while (DigitBool){
     if (DigitCounter == 10){
       DigitBool = false;
     }
     else {
-
+      string ConvertedStringNumber = to_string(Number);
+      for (int i = 0; i < 10; i++){
+        if (ConvertedStringNumber.find(i) != string::npos){
+          DigitHolder[i] = 1;
+        }
+      }
     }
   }
 }
