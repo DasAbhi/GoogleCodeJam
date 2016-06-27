@@ -14,22 +14,34 @@ int IntegerIterator(int Number){
 
   int DigitCounter = 0;
   int iterator = 0;
-  bool DigitBool = true;
+  bool DigitBool = 1;
 
   //string ConvertedSringNumber = to_string(Number);
 
   while (DigitBool){
     if (DigitCounter == 10){
       DigitBool = false;
+      return Number;
     }
     else {
+
+      DigitCounter = 0;
       string ConvertedStringNumber = to_string(Number);
+
       for (int i = 0; i < 10; i++){
-        if (ConvertedStringNumber.find(i) != string::npos){
+        if (ConvertedStringNumber.find(i + 48) != string::npos){
           DigitHolder[i] = 1;
         }
       }
+
+      for (int i = 0; i < 10; i++){
+        if (DigitHolder[i] == 1){
+          DigitCounter ++;
+        }
+      }
     }
+    iterator ++;
+    Number = Number * (iterator);
   }
 }
 
