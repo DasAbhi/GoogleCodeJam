@@ -5,6 +5,7 @@
 using namespace std;
 
 int IntegerIterator(int Number){
+
   bool DigitHolder [10];
 
   //have to initialize the array with zeros
@@ -12,36 +13,36 @@ int IntegerIterator(int Number){
     DigitHolder[i] = 0;
   }
 
-  int DigitCounter = 0;
+  int DigitCounter;
   int iterator = 0;
   bool DigitBool = 1;
+  int NextNumber = Number;
+  string ConvertedStringNumber;
 
-  //string ConvertedSringNumber = to_string(Number);
-
-  while (DigitBool){
+ while (DigitBool){
     if (DigitCounter == 10){
       DigitBool = false;
-      return Number;
+      return NextNumber;
     }
-    else {
-
+   else {
+     ++ iterator;
+     NextNumber = Number * (iterator);
       DigitCounter = 0;
-      string ConvertedStringNumber = to_string(Number);
+
+      ConvertedStringNumber = to_string(NextNumber);
 
       for (int i = 0; i < 10; i++){
-        if (ConvertedStringNumber.find(i + 48) != string::npos){
+       if (ConvertedStringNumber.find(i + 48) != string::npos){
           DigitHolder[i] = 1;
         }
       }
-
       for (int i = 0; i < 10; i++){
-        if (DigitHolder[i] == 1){
+       if (DigitHolder[i] == 1){
           DigitCounter ++;
         }
       }
+      cout << endl;
     }
-    iterator ++;
-    Number = Number * (iterator);
   }
 }
 
@@ -55,7 +56,9 @@ int main(){
   string GarbagePlaceHolder;
 
   fout << "Output" << endl;
-  fin >> GarbagePlaceHolder >> InputCounter;
+  fin >> GarbagePlaceHolder >> InputCounter; //assuming the first input from the file is the word "input"
+
+  //cout << GarbagePlaceHolder << " " << InputCounter << endl;
 
   for (int i = 0; i < InputCounter; i++){
     fin >> InputInteger;
