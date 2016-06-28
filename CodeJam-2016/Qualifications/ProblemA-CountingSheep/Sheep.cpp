@@ -49,16 +49,15 @@ int IntegerIterator(int Number){
 
 int main(){
 
-  ifstream fin("input.txt");
-  ofstream fout("output.txt");
+  ifstream fin("A.large.in");
+  ofstream fout("A.large.out");
 
   int InputCounter, InputInteger, FinalInteger;
   string GarbagePlaceHolder;
 
   fout << "Output" << endl;
-  fin >> GarbagePlaceHolder >> InputCounter; //assuming the first input from the file is the word "input"
+  fin  >> InputCounter;
 
-  //cout << GarbagePlaceHolder << " " << InputCounter << endl;
 
   for (int i = 0; i < InputCounter; i++){
     fin >> InputInteger;
