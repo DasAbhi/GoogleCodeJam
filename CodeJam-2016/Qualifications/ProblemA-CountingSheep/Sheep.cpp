@@ -16,7 +16,7 @@ int IntegerIterator(int Number){
   int DigitCounter;
   int iterator = 0;
   bool DigitBool = 1;
-  int NextNumber = Number;
+  int NextNumber = Number;INSOMNIA
   string ConvertedStringNumber;
 
  while (DigitBool){
